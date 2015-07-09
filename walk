@@ -1,0 +1,8 @@
+import os
+import os.path
+for root, dirs, files in os.walk("."):
+    for name in files:
+        if name.endswith(".JPG"):
+            filename = root + '/' + name
+            print("convert %s -resize 640x %s" %  (filename, filename))
+            os.system("convert %s -resize 640x %s" %  (filename, filename))
